@@ -1,6 +1,4 @@
-# SilverBullet plug for saying hello to the user
-
-A well behaved plug that will greet your users.
+# SilverBullet plug for posting to [micro.blog](https://micro.blog)
 
 ## Wait, SilverBullet?
 
@@ -34,7 +32,7 @@ Then, load the locally built plug, add it to your `PLUGS` note with an absolute
 path, for instance:
 
 ```
-- file:/Users/you/path/to/hello.plug.json
+- file:/Users/you/path/to/micro_blog.plug.json
 ```
 
 And run the `Plugs: Update` command in SilverBullet.
@@ -45,12 +43,29 @@ If you would like to install this plug straight from Github, make sure you have
 the `.json` file committed to the repo and simply add
 
 ```
-- github:user/plugname/plugname.plug.json
+- github:jahzielv/silverbullet-micro-blog/micro_blog.plug.json
 ```
 
 to your `PLUGS` file, run `Plugs: Update` command and off you go!
 
-## What's with all that Lone Ranger quotes
+## Usage
 
-Don't you know that the
-[Lone Ranger used silver bullets to solve all the problems](https://en.wikipedia.org/wiki/Silver_bullet#Lone_Ranger)?
+First, add your micro.blog token to your `SECRETS` file:
+
+```
+microblog:
+  token: {YOUR_APP_TOKEN}
+```
+
+then, add
+
+```
+---
+$share:
+- microblog
+---
+```
+
+to your post's frontmatter.
+
+Finally, use the `Share: Publish` command to publish your SilverBullet page to your micro.blog!
