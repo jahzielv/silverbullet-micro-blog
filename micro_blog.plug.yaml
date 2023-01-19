@@ -1,0 +1,10 @@
+name: microblog
+version: 0.1
+imports:
+  - https://get.silverbullet.md/global.plug.json
+functions:
+  publish:
+    path: "./micro_blog.ts:publish"
+    env: server
+    events:
+      - share:microblog
